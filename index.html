@@ -27,7 +27,7 @@
         var call = function(){
           alert("online")
         }
-        socket.on('connect', call())
+        socket.on('connection', call)
         
         
         $('form').submit(function(){
