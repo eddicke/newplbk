@@ -24,13 +24,16 @@
     <script>
       $(function () {
         var socket = io();
-        var call = function(){
-          alert("online")
-        }
+      var user = 0
         socket.on('connection', function(){
-          socket.on('broadcast', m => console.log('Received broadcast:', m));
+        user++
+          socket.emit('onlinecount', user);
         })
         
+        //Update all socket events
+        socket.on('onlinecount', function(msg){
+          console.log(msg);
+        })
         
         $('form').submit(function(){
           socket.emit('chat message', $('#m').val());
