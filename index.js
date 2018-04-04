@@ -8,6 +8,8 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
+  socket.broadcast.emit('broadcast', 'New participant connected.');
+  
   socket.on('chat message', function(msg){
    io.emit('chat message', msg);
   });
