@@ -27,7 +27,9 @@
         var call = function(){
           alert("online")
         }
-        socket.on('connection', call)
+        socket.on('connection', function(){
+          socket.on('broadcast', m => console.log('Received broadcast:', m));
+        })
         
         
         $('form').submit(function(){
