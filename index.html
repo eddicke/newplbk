@@ -29,12 +29,14 @@
         user++
           console.log(user)
           socket.emit('onlinecount', user);
+          
+            socket.on('onlinecount', function(msg){
+          console.log(msg);
+        })
         })
         
         //Update all socket events
-        socket.on('onlinecount', function(msg){
-          console.log(msg);
-        })
+      
         
         $('form').submit(function(){
           socket.emit('chat message', $('#m').val());
