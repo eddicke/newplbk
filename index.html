@@ -27,6 +27,7 @@
       var user = 0
         socket.on('connection', function(){
         user++
+          console.log(user)
           socket.emit('onlinecount', user);
         })
         
