@@ -132,15 +132,15 @@ setInterval(function() {
   socket.emit('movement', movement);
 }, 1000 / 60);
            
-            var mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
+           
             socket.on('state', function(players) {
            
             for (var id in players) {
             var player = players[id];
-              
+              player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
 
              
-                mesh.position.y = player.y
+             //   mesh.position.y = player.y
          
 
             }
