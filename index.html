@@ -89,8 +89,11 @@ socket.on('state', function(players) {
   for (var id in players) {
     var player = players[id];
     context.fillStyle = player.color;
-    context.beginPath();
-    context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
+   // context.beginPath();
+   // context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
+    var img = new Image()
+    img.src = "http://www.pngmart.com/files/3/Ocean-Fish-PNG-Transparent.png";
+    context.drawImage(img, player.x, player.y, 30, 30);
     context.fill();
   }
 });
