@@ -7,19 +7,34 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
-io.on('connection', function(socket){
-  
-  socket.on('chat message', function(msg){
-   io.emit('chat message', msg);
+var players = {};
+io.on('connection', function(socket) {
+  socket.on('new player', function() {
+    players[socket.id] = {
+      x: 300,
+      y: 300
+    };
   });
-  socket.on('onlinecount', function(msg){
-   io.emit('onlinecount', msg);
+  socket.on('movement', function(data) {
+    var player = players[socket.id] || {};
+    if (data.left) {
+      player.x -= 5;
+    }
+    if (data.up) {
+      player.y -= 5;
+    }
+    if (data.right) {
+      player.x += 5;
+    }
+    if (data.down) {
+      player.y += 5;
+    }
   });
 });
-
 setInterval(function() {
-  io.sockets.emit('message', 'hi!');
-}, 1000);
+  io.sockets.emit('state', players);
+}, 1000 / 60);
+
 
 http.listen(port, function(){
   console.log('listening on *:' + port);
