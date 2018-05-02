@@ -39,11 +39,8 @@ io.on('connection', function(socket) {
 });
 
 setInterval(function() {
-  count += 1
-  if(count == 2){
   io.sockets.emit('state', players);
-  }
-}, 2000);
+}, 1000/60);
 
 
 http.listen(port, function(){
