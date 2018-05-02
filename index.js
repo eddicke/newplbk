@@ -30,6 +30,9 @@ io.on('connection', function(socket) {
       player.y += 5;
     }
   });
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  })
 });
 setInterval(function() {
   io.sockets.emit('state', players);
