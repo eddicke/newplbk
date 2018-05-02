@@ -36,9 +36,9 @@ io.on('connection', function(socket) {
     io.emit('chat message', msg);
   })
 });
-setTimeout(function() {
+setInterval(function() {
   io.sockets.emit('state', players);
-}, 100);
+}, 2000);
 
 
 http.listen(port, function(){
