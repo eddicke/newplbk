@@ -36,8 +36,12 @@ io.on('connection', function(socket) {
     io.emit('chat message', msg);
   })
 });
+var count = 0
 setInterval(function() {
+  count += 1
+  if(count == 2){
   io.sockets.emit('state', players);
+  }
 }, 2000);
 
 
