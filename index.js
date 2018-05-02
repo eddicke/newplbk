@@ -12,8 +12,8 @@ io.on('connection', function(socket) {
   socket.on('new player', function() {
     count = 0
     players[socket.id] = {
-      x: 300,
-      y: 300,
+      x: 0,
+      y: 0,
       mesh: null,
       color: 'rgb(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ')'
     };
