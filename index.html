@@ -119,7 +119,7 @@ setInterval(function() {
   
             for (var id in players) {
             var player = players[id];
-            
+              player.mesh = player.mesh
               player.mesh.position.x = player.x
               player.mesh.position.z = player.y
             }
