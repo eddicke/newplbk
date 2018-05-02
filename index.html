@@ -18,6 +18,8 @@
     <title>A Multiplayer Game</title>
     <style>
       canvas {
+        background-image: url("https://i.gifer.com/ItS.gif");
+        background-repeat: no-repeat;
         width: 800px;
         height: 600px;
         border: 5px solid black;
@@ -93,7 +95,7 @@ socket.on('state', function(players) {
    // context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
     var img = new Image()
     img.src = "http://www.pngmart.com/files/3/Ocean-Fish-PNG-Transparent.png";
-    context.drawImage(img, player.x, player.y, 100, 100);
+    context.drawImage(img, player.x, player.y, 180, 180);
     context.fill();
   }
 });
