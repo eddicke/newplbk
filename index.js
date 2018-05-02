@@ -36,7 +36,7 @@ io.on('connection', function(socket) {
     io.emit('chat message', msg);
   })
 });
-setInterval(function() {
+setTimeout(function() {
   io.sockets.emit('state', players);
 }, 1000 / 60);
 
