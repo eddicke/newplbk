@@ -139,14 +139,8 @@ setInterval(function() {
             var player = players[id];
               player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
 
-               socket.on('directions', function(dirs) {
-           
-            for (var id in dirs) {
-            var dir = dirs[id];
-              player.mesh.position.y = dir.y;
-              player.mesh.position.x = dir.x;
-            }
-               })
+           player.mesh.position.y = player.y;
+              player.mesh.position.x = player.x;
          
 
             }
