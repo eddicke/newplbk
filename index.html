@@ -137,6 +137,7 @@ setInterval(function() {
             for (var id in players) {
             var player = players[id];
               player.mesh = new BABYLON.Mesh.CreateBox("box", 2, scene);
+              alert(player.mesh)
               player.mesh.position.x = player.x
               player.mesh.position.z = player.y
             }
