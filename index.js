@@ -45,7 +45,7 @@ io.on('connection', function(socket) {
    if(count == 2){
   io.sockets.emit('state', players.mesh);
    }else{
-     io.sockets.emit('state', {players.x, players.y});
+     io.sockets.emit('state', players.x);
    }
 }, 1000 / 60);
 
