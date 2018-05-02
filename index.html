@@ -139,7 +139,9 @@ setInterval(function() {
             for (var id in players) {
             var player = players[id];
            
-              
+              if(cnt == 2){
+                player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
+              }
             /*  player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
 
               socket.on('directions', function(dirs) {
