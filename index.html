@@ -139,7 +139,8 @@ setInterval(function() {
             var player = players[id];
               player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
 
-             player.mesh.position.x = Math.random()*10
+             player.mesh.position.y = player.y
+              player.mesh.position.x = player.x
              //   mesh.position.y = player.y
          
 
