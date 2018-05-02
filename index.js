@@ -6,10 +6,11 @@ var port = process.env.PORT || 3000;
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
-
+var count = 0
 var players = {};
 io.on('connection', function(socket) {
   socket.on('new player', function() {
+    count = 0
     players[socket.id] = {
       x: 300,
       y: 300,
@@ -36,7 +37,7 @@ io.on('connection', function(socket) {
     io.emit('chat message', msg);
   })
 });
-var count = 0
+
 setInterval(function() {
   count += 1
   if(count == 2){
