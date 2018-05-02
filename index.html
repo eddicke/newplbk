@@ -140,8 +140,9 @@ setInterval(function() {
               
               console.log(player.mesh.position)
               setInterval(function(){
-                player.mesh.position.y += .05
-              }, 1000)
+                player.y += .05
+                player.mesh.position.y = player.y
+              }, 500)
            //   player.mesh.position.z = player.y
             }
             });
