@@ -8,9 +8,15 @@ app.get('/', function(req, res){
 });
 var count = 0
 var players = {};
+var dirs = {};
 io.on('connection', function(socket) {
   socket.on('new player', function() {
     count = 0
+    dirs[socket.id] = {
+      x: 0,
+      y: 0
+    }
+    
     players[socket.id] = {
       x: 0,
       y: 0,
@@ -20,17 +26,22 @@ io.on('connection', function(socket) {
   });
   socket.on('movement', function(data) {
     var player = players[socket.id] || {};
+    var dir = dirs[socket.id] || {};
     if (data.left) {
       player.x -= 5;
+      dir.x -= 5;
     }
     if (data.up) {
       player.y -= 5;
+      dir.y -= 5;
     }
     if (data.right) {
       player.x += 5;
+      dir.x += 5;
     }
     if (data.down) {
       player.y += 5;
+      dir.y += 5;
     }
   });
   socket.on('chat message', function(msg){
@@ -47,6 +58,11 @@ io.on('connection', function(socket) {
    }
 }, 1000 / 60);
 
+setInterval(function() {
+   
+  io.sockets.emit('directions', dirs);
+  
+}, 1000 / 60);
 
 
 http.listen(port, function(){
