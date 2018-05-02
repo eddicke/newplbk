@@ -101,10 +101,7 @@ document.addEventListener('keyup', function(event) {
       break;
   }
 });
-        socket.emit('new player');
-setInterval(function() {
-  socket.emit('movement', movement);
-}, 1000 / 60);
+        
         //////////////********************DRAW THE PLAYERS********************\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
         
@@ -130,6 +127,11 @@ setInterval(function() {
             // Default intensity is 1. Let's dim the light a small amount
             light.intensity = 0.7;
         
+           socket.emit('new player');
+setInterval(function() {
+  socket.emit('movement', movement);
+}, 1000 / 60);
+           
             socket.on('state', function(players) {
   
             for (var id in players) {
