@@ -34,15 +34,9 @@
       $(function () {
         var socket = io();
       var user = 0
-        socket.on('connection', function(){
-        user++
-          console.log("hello world!")
-          socket.emit('onlinecount', user);
-          
-            socket.on('onlinecount', function(msg){
-          console.log(msg);
-        })
-        })
+      socket.on('message', function(data) {
+  console.log(data);
+});
         
         //Update all socket events
       
