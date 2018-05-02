@@ -17,6 +17,10 @@ io.on('connection', function(socket){
   });
 });
 
+setInterval(function() {
+  io.sockets.emit('message', 'hi!');
+}, 1000);
+
 http.listen(port, function(){
   console.log('listening on *:' + port);
 });
