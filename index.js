@@ -43,7 +43,7 @@ io.on('connection', function(socket) {
  setInterval(function() {
    count += 1
    if(count == 2){
-  io.sockets.emit('state', players.mesh);
+  io.sockets.emit('state', players);
    }
 }, 1000 / 60);
 
