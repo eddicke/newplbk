@@ -12,10 +12,7 @@ var dirs = {};
 io.on('connection', function(socket) {
   socket.on('new player', function() {
     count = 0
-    dirs[socket.id] = {
-      x: 0,
-      y: 0
-    }
+    
     
     players[socket.id] = {
       x: 0,
@@ -23,6 +20,12 @@ io.on('connection', function(socket) {
       mesh: null,
       color: 'rgb(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ')'
     };
+    
+    dirs[socket.id] = {
+      x: players[socket.id].x,
+      y: players[socket.id].y
+    }
+    
   });
   socket.on('movement', function(data) {
     var player = players[socket.id] || {};
