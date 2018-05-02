@@ -133,6 +133,7 @@ setInterval(function() {
 }, 1000 / 60);
            
            var cnt = 0
+           var pl = []
             socket.on('state', function(players) {
               cnt += 1
               console.log(cnt)
@@ -142,7 +143,13 @@ setInterval(function() {
               if(cnt == 2){
                 console.log("yes")
                 player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
+                pl.push(player.mesh)
               }
+              if(cnt > 2){
+                pl[pl.length-1].position.y = player.y
+                pl[pl.length-1].position.x = player.x
+              }
+              
             /*  player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
 
               socket.on('directions', function(dirs) {
