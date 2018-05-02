@@ -38,7 +38,7 @@ io.on('connection', function(socket) {
 });
 setTimeout(function() {
   io.sockets.emit('state', players);
-});
+}, 100);
 
 
 http.listen(port, function(){
