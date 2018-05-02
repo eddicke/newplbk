@@ -13,6 +13,7 @@ io.on('connection', function(socket) {
     players[socket.id] = {
       x: 300,
       y: 300,
+      mesh: new BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene),
       color: 'rgb(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ')'
     };
   });
