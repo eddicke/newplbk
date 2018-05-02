@@ -32,11 +32,12 @@ io.on('connection', function(socket) {
     if (data.down) {
       player.y += 5;
     }
+    io.sockets.emit('state', players);
   });
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
   })
-   io.sockets.emit('state', players);
+   
 });
 
 
