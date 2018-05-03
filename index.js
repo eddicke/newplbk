@@ -76,11 +76,11 @@ setInterval(function(){
 
 
 
- setInterval(function() {
+// setInterval(function() {
  
   io.sockets.emit('state', players);
 
-}, 1000 / 60);
+//}, 1000 / 60);
 
 setInterval(function() {
    
