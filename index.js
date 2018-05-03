@@ -10,6 +10,7 @@ var count = 0
 var players = {};
 var dirs = {};
 io.on('connection', function(socket) {
+  io.emit("online", id)
   socket.on('new player', function() {
     count = 0
        dirs[socket.id] = {
