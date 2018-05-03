@@ -27,7 +27,7 @@ io.on('connection', function(socket) {
     players[socket.id] = {
       x: dirs[socket.id].x,
       y: dirs[socket.id].y,
-      rnd: Math.random()*5,
+      rnd: Math.floor(Math.random()*10),
       mesh: null,
       color: 'rgb(' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ',' + parseInt(Math.random() * 255) + ')'
     };
