@@ -16,7 +16,7 @@ var dirs = {};
 io.on('connection', function(socket) {
 
   socket.on('new player', function() {
-  io.sockets.emit('state', players);
+
     count = 0
        dirs[socket.id] = {
       x: 0,
@@ -69,8 +69,9 @@ io.on('connection', function(socket) {
 
 setInterval(function(){
   count += 1
-  if(count == 2){
+  if(count == 1){
   io.sockets.emit('online', mrt.rnd);
+  io.sockets.emit('state', players);
   }
 }, 1000)
 
