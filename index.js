@@ -77,7 +77,8 @@ setInterval(function(){
 
 
 // setInterval(function() {
- 
+ io.sockets.emit('state', players);
+
 document.addEventListener("keydown", function(ev){
   if(ev.which == 32){
   io.sockets.emit('state', players);
