@@ -12,7 +12,7 @@ var dirs = {};
 io.on('connection', function(socket) {
   
   socket.on('new player', function() {
-    io.sockets.emit("online", "new user online")
+    io.emit("online", "new user online")
     count = 0
        dirs[socket.id] = {
       x: 0,
