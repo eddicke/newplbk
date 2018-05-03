@@ -23,12 +23,6 @@ io.on('connection', function(socket) {
       y: 0,
          rnd: Math.floor(Math.random()*10)
     }
-    setInterval(function(){
-  count += 1
-  if(count == 4){
-  io.sockets.emit('online', dirs[socket.id].rnd);
-  }
-}, 1000)
     
     players[socket.id] = {
       x: dirs[socket.id].x,
