@@ -131,8 +131,7 @@ document.addEventListener('keyup', function(event) {
 setInterval(function() {
   socket.emit('movement', movement);
 }, 1000 / 60);
-           
-           socket.emit('online', "there's a new user online")
+
            var cnt = 0
            var pl = []
             socket.on('state', function(players) {
