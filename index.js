@@ -56,7 +56,7 @@ io.on('connection', function(socket) {
    
 });
 
-setTimeout(function(){
+setInterval(function(){
   io.sockets.emit('online', "hello!");
 }, 1000)
  setInterval(function() {
