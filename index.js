@@ -10,9 +10,7 @@ var count = 0
 var players = {};
 var dirs = {};
 io.on('connection', function(socket) {
-  socket.on("online", function(msg){
-    alert(msg)
-  })
+
   socket.on('new player', function() {
   
     count = 0
@@ -58,7 +56,9 @@ io.on('connection', function(socket) {
    
 });
 
-
+setTimeout(function(){
+  io.sockets.emit('online', "hello!");
+}, 1000)
  setInterval(function() {
  
   io.sockets.emit('state', players);
