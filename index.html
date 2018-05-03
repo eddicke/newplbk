@@ -145,11 +145,11 @@ setInterval(function() {
                socket.emit('shift', shft);
              }
            })
-           var players = []
+           var newplayers = []
            for(var i = 0; i<20; i++){
              var player = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
              player.setEnabled(false)
-             players.push(player)
+             newplayers.push(player)
            }
            
              
@@ -162,7 +162,7 @@ setInterval(function() {
             var player = players[id];
            console.log("this is random"+player.rnd)
           
-              players[player.rnd].setEnabled(true)
+              newplayers[player.rnd].setEnabled(true)
            //   player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
            //   player.mesh.position.y = player.y
               //player.mesh.position.x = player.x
@@ -178,7 +178,7 @@ setInterval(function() {
               
               
            
-            players[player.rnd].position.y = dir.y
+            newplayers[player.rnd].position.y = dir.y
               
               console.log("new y position "+dir.y)
               if(dir.move){
