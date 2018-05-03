@@ -162,7 +162,7 @@ setInterval(function() {
             var player = players[id];
            console.log("this is random"+player.rnd)
           
-              newplayers[player.rnd].setEnabled(true)
+              
            //   player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
            //   player.mesh.position.y = player.y
               //player.mesh.position.x = player.x
@@ -174,11 +174,13 @@ setInterval(function() {
               console.log(cnt)
             for (var id in dirs) {
             var dir = dirs[id];
+              
+              newplayers[dir.rnd].setEnabled(true)
             //player.mesh.position.y = dir.rnd
               
               
            
-            newplayers[player.rnd].position.y = dir.y
+            newplayers[dir.rnd].position.y = dir.y
               
               console.log("new y position "+dir.y)
               if(dir.move){
