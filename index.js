@@ -64,7 +64,7 @@ io.on('connection', function(socket) {
 setInterval(function(){
   count += 1
   if(count == 1){
-  io.sockets.emit('online', mrt.rnd);
+
   io.sockets.emit('state', players);
     io.sockets.emit('directions', dirs);
   }
@@ -78,7 +78,7 @@ setInterval(function(){
 
 setInterval(function() {
    
-  
+    io.sockets.emit('online', mrt.rnd);
   
 }, 1000 / 60);
 
