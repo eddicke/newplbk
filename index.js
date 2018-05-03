@@ -60,13 +60,14 @@ io.on('connection', function(socket) {
    
 });
 
-setTimeout(function(){
+setInterval(function(){
+  count += 1
+  if(count == 2){
   io.sockets.emit('online', mrt.rnd);
-}, 100)
+  }
+}, 1000)
 
-setTimeout(function(){
-  io.sockets.emit('online', mrt.rnd);
-}, 2000)
+
 
  setInterval(function() {
  
