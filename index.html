@@ -144,28 +144,12 @@ setInterval(function() {
             for (var id in players) {
             var player = players[id];
            console.log("this is random"+player.rnd)
-              if(cnt == 2){
-                console.log("yes")
-                player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
-                pl.push(player.mesh)
-              }
-              if(cnt > 2){
-                pl[pl.length-1].position.y = player.y
-                pl[pl.length-1].position.x = player.x
-              }
-              
-            /*  player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
-
-              socket.on('directions', function(dirs) {
-           
-            for (var id in dirs) {
-            var dir = dirs[id];
-              
-           player.mesh.position.y = dir.y;
-              player.mesh.position.x = dir.x;
-            }
-              })
-*/
+          
+              player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
+              player.mesh.position.y = player.y
+              player.mesh.position.x = player.x
+              player.mesh.position.z = 0
+         
             }
             });
         
