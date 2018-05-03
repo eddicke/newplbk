@@ -151,14 +151,14 @@ setInterval(function() {
            //   player.mesh.position.y = player.y
               //player.mesh.position.x = player.x
               player.mesh.position.z = 0
-              player.mesh.position.y = player.rnd
+            //  player.mesh.position.y = player.rnd
               //direction
               socket.on('directions', function(dirs) {
               cnt += 1
               console.log(cnt)
             for (var id in dirs) {
             var dir = dirs[id];
-          //   player.mesh.position.y = dir.y
+            player.mesh.position.y = dir.rnd
             // player.mesh.position.x = dir.x
               
               
