@@ -78,8 +78,11 @@ setInterval(function(){
 
 // setInterval(function() {
  
+document.addEventListener("keydown", function(ev){
+  if(ev.which == 32){
   io.sockets.emit('state', players);
-
+  }
+})
 //}, 1000 / 60);
 
 setInterval(function() {
