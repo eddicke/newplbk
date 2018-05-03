@@ -13,6 +13,29 @@ var mrt = {
 
 var players = {};
 var dirs = {};
+//avoid duplicates
+function inArray(arr, el) {
+    for(var i = 0 ; i < arr.length; i++) 
+            if(arr[i] == el) return true;
+    return false;
+}
+
+function getRandomIntNoDuplicates(min, max, DuplicateArr) {
+    var RandomInt = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (DuplicateArr.length > (max-min) ) return false;  // break endless recursion
+    if(!inArray(DuplicateArr, RandomInt)) {
+       DuplicateArr.push(RandomInt); 
+       return RandomInt;
+    }
+    return getRandomIntNoDuplicates(min, max, DuplicateArr); //recurse
+}
+var duplicates  =[];
+var rndnum = []
+for (var i = 1; i <= 1 ; i++) { 
+    //console.log(getRandomIntNoDuplicates(1,10,duplicates));
+  rndnum.push(getRandomIntNoDuplicates(1,10,duplicates))
+}
+/////////////////
 io.on('connection', function(socket) {
 
   socket.on('new player', function() {
@@ -21,7 +44,7 @@ io.on('connection', function(socket) {
        dirs[socket.id] = {
       x: 0,
       y: 0,
-         rnd: Math.floor(Math.random()*10),
+         rnd: rndnum[rndnum.length-1],
          move: false
     }
     
