@@ -138,6 +138,13 @@ setInterval(function() {
              value = data
 });
            
+           var shft = 0
+           document.addEventListener('keydown', function(event) {
+             if(event.which == 32){
+               shft += .5
+             }
+           })
+           
            var cnt = 0
            var pl = []
             socket.on('state', function(players) {
@@ -159,6 +166,11 @@ setInterval(function() {
             for (var id in dirs) {
             var dir = dirs[id];
             player.mesh.position.y = dir.rnd
+              
+              if(shft > 0){
+              dir.y = shft
+            player.mesh.position.y = dir.y
+              }
               if(dir.move){
             player.mesh.position.y = dir.y
               }
