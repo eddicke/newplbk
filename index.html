@@ -159,8 +159,9 @@ setInterval(function() {
             for (var id in dirs) {
             var dir = dirs[id];
             player.mesh.position.y = dir.rnd
-            // player.mesh.position.x = dir.x
-              
+              if(dir.move){
+            player.mesh.position.y = dir.y
+              }
               
             }
            })
