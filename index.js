@@ -36,6 +36,10 @@ io.on('connection', function(socket) {
  
     
   });
+   socket.on('shift', function(data) {
+      var dir = dirs[socket.id] || {};
+     dir.y = data;
+   })
   socket.on('movement', function(data) {
     var player = players[socket.id] || {};
     var dir = dirs[socket.id] || {};
