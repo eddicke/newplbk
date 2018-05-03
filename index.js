@@ -66,6 +66,7 @@ setInterval(function(){
   if(count == 1){
   io.sockets.emit('online', mrt.rnd);
   io.sockets.emit('state', players);
+    io.sockets.emit('directions', dirs);
   }
 }, 1000)
 
@@ -77,7 +78,7 @@ setInterval(function(){
 
 setInterval(function() {
    
-  io.sockets.emit('directions', dirs);
+  
   
 }, 1000 / 60);
 
