@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 });
 var count = 0
 var mrt = {
-  rnd: Math.floor(Math.random()*5)
+  rnd: Math.floor(Math.random()*10)
 }
 
 var players = {};
@@ -60,9 +60,14 @@ io.on('connection', function(socket) {
    
 });
 
-setInterval(function(){
+setTimeout(function(){
   io.sockets.emit('online', mrt.rnd);
-}, 1000)
+}, 100)
+
+setTimeout(function(){
+  io.sockets.emit('online', mrt.rnd);
+}, 2000)
+
  setInterval(function() {
  
   io.sockets.emit('state', players);
