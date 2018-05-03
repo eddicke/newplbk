@@ -21,7 +21,8 @@ io.on('connection', function(socket) {
        dirs[socket.id] = {
       x: 0,
       y: 0,
-         rnd: Math.floor(Math.random()*10)
+         rnd: Math.floor(Math.random()*10),
+         move: false
     }
     
     players[socket.id] = {
@@ -43,6 +44,7 @@ io.on('connection', function(socket) {
       dir.x -= 5;
     }
     if (data.up) {
+      dir.move = true
       player.y -= 5;
       dir.y -= 5;
     }
@@ -51,6 +53,7 @@ io.on('connection', function(socket) {
       dir.x += 5;
     }
     if (data.down) {
+      dir.move = true
       player.y += 5;
       dir.y += 5;
     }
