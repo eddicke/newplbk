@@ -66,7 +66,7 @@ io.on('connection', function(socket) {
 
 setInterval(function(){
   count += 1
-  if(count == 1){
+  if(count == 2){
 
   io.sockets.emit('state', players);
     
