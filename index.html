@@ -146,13 +146,28 @@ setInterval(function() {
            console.log("this is random"+player.rnd)
           
               player.mesh = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
-              player.mesh.position.y = player.y
-              player.mesh.position.x = player.x
+           //   player.mesh.position.y = player.y
+              //player.mesh.position.x = player.x
               player.mesh.position.z = 0
+              
+              //direction
+              socket.on('directions', function(dirs) {
+              cnt += 1
+              console.log(cnt)
+            for (var id in dirs) {
+            var dir = dirs[id];
+             player.mesh.position.y = dir.y
+             player.mesh.position.x = dir.x
+              
+              
+            }
+           })
+              //*******\\\\\\
          
             }
             });
         
+           s
             // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
             var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
         
