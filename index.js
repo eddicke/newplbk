@@ -7,6 +7,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 var count = 0
+var mrt = {
+  rnd: Math.floor(Math.random()*5)
+}
+
 var players = {};
 var dirs = {};
 io.on('connection', function(socket) {
@@ -57,7 +61,7 @@ io.on('connection', function(socket) {
 });
 
 setInterval(function(){
-  io.sockets.emit('online', players.rnd);
+  io.sockets.emit('online', mrt.rnd);
 }, 1000)
  setInterval(function() {
  
