@@ -77,7 +77,7 @@ setInterval(function(){
 //}, 1000 / 60);
 
 setInterval(function() {
-   io.sockets.emit('directions', dirs.rnd);
+   io.sockets.emit('directions', dirs);
     io.sockets.emit('online', mrt.rnd);
   
 }, 1000 / 60);
