@@ -132,8 +132,10 @@ setInterval(function() {
   socket.emit('movement', movement);
 }, 1000 / 60);
 
+           var value = 0;
            socket.on('online', function(data) {
   alert(data);
+             value = data
 });
            
            var cnt = 0
@@ -149,15 +151,15 @@ setInterval(function() {
            //   player.mesh.position.y = player.y
               //player.mesh.position.x = player.x
               player.mesh.position.z = 0
-              
+              player.mesh.position.y = value
               //direction
               socket.on('directions', function(dirs) {
               cnt += 1
               console.log(cnt)
             for (var id in dirs) {
             var dir = dirs[id];
-             player.mesh.position.y = dir.y
-             player.mesh.position.x = dir.x
+          //   player.mesh.position.y = dir.y
+            // player.mesh.position.x = dir.x
               
               
             }
