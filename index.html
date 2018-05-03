@@ -134,7 +134,7 @@ setInterval(function() {
 
            var value = 0;
            socket.on('online', function(data) {
-  alert(data);
+  //alert(data);
              value = data
 });
            
@@ -151,7 +151,7 @@ setInterval(function() {
            //   player.mesh.position.y = player.y
               //player.mesh.position.x = player.x
               player.mesh.position.z = 0
-              player.mesh.position.y = value
+              player.mesh.position.y = player.rnd
               //direction
               socket.on('directions', function(dirs) {
               cnt += 1
