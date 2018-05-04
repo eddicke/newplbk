@@ -47,7 +47,7 @@ io.on('connection', function(socket) {
        dirs[socket.id] = {
       x: 0,
       y: 0,
-      rnd: tgh,
+      rnd: cnts,
       move: false
     }
     
@@ -68,7 +68,6 @@ io.on('connection', function(socket) {
    socket.on('shift', function(data) {
       var dir = dirs[socket.id] || {};
      dir.y = data;
-     dir.rnd = 34;
    })
   socket.on('movement', function(data) {
     var player = players[socket.id] || {};
