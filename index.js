@@ -115,7 +115,7 @@ setInterval(function(){
 setInterval(function() {
   
    io.sockets.emit('directions', dirs);
-io.sockets.emit('online', cnts);
+//io.sockets.emit('online', cnts);
   
 }, 1000 / 60);
 
