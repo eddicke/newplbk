@@ -51,8 +51,8 @@ io.on('connection', function(socket) {
          move: false
     }
     
-    dirs[socket.id].rnd += 1
-    io.sockets.emit('online', dirs[socket.id].rnd);
+    cnts += 1
+    
     
     players[socket.id] = {
       x: 0,
@@ -115,7 +115,7 @@ setInterval(function(){
 setInterval(function() {
   
    io.sockets.emit('directions', dirs);
-
+io.sockets.emit('online', cnts);
   
 }, 1000 / 60);
 
