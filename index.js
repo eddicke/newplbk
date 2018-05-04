@@ -42,7 +42,8 @@ for (var i = 1; i <= 1 ; i++) {
 io.on('connection', function(socket) {
 
   socket.on('new player', function() {
-
+    cnts += 1
+    io.sockets.emit('online', cnts);
     
        dirs[socket.id] = {
       x: 0,
@@ -110,9 +111,9 @@ setInterval(function(){
 //}, 1000 / 60);
 
 setInterval(function() {
-  cnts += 1
+  
    io.sockets.emit('directions', dirs);
-    io.sockets.emit('online', cnts);
+
   
 }, 1000 / 60);
 
