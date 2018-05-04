@@ -13,6 +13,8 @@ var mrt = {
 
 var players = {};
 var dirs = {};
+var cnts = 0;
+
 //avoid duplicates
 function inArray(arr, el) {
     for(var i = 0 ; i < arr.length; i++) 
@@ -31,7 +33,7 @@ function getRandomIntNoDuplicates(min, max, DuplicateArr) {
 }
 var duplicates  =[];
 var rndnum = []
-var cnts = 0
+
 for (var i = 1; i <= 1 ; i++) { 
     //console.log(getRandomIntNoDuplicates(1,10,duplicates));
   rndnum.push(getRandomIntNoDuplicates(1,10,duplicates))
