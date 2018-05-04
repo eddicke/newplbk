@@ -42,16 +42,16 @@ for (var i = 1; i <= 1 ; i++) {
 io.on('connection', function(socket) {
 
   socket.on('new player', function() {
-    
+    cnts += 1
     
        dirs[socket.id] = {
       x: 0,
       y: 0,
-         rnd: 0,
+         rnd: cnts,
          move: false
     }
     
-    cnts += 1
+    
     
     
     players[socket.id] = {
