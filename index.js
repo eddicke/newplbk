@@ -14,7 +14,7 @@ var mrt = {
 var players = {};
 var dirs = {};
 var cnts = 0;
-
+var tgh = 0;
 //avoid duplicates
 function inArray(arr, el) {
     for(var i = 0 ; i < arr.length; i++) 
@@ -47,7 +47,7 @@ io.on('connection', function(socket) {
        dirs[socket.id] = {
       x: 0,
       y: 0,
-      rnd: cnts,
+      rnd: tgh,
       move: false
     }
     
