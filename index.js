@@ -31,6 +31,7 @@ function getRandomIntNoDuplicates(min, max, DuplicateArr) {
 }
 var duplicates  =[];
 var rndnum = []
+var cnts = 0
 for (var i = 1; i <= 1 ; i++) { 
     //console.log(getRandomIntNoDuplicates(1,10,duplicates));
   rndnum.push(getRandomIntNoDuplicates(1,10,duplicates))
@@ -40,11 +41,11 @@ io.on('connection', function(socket) {
 
   socket.on('new player', function() {
 
-    count = 0
+    cnts += 1
        dirs[socket.id] = {
       x: 0,
       y: 0,
-         rnd: Math.floor(Math.random() * 10) + 1,
+         rnd: cnts,
          move: false
     }
     
