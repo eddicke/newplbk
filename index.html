@@ -146,6 +146,17 @@ setInterval(function() {
                socket.emit('shift', shft);
              }
            })
+           
+           //pointer event
+           scene.onPointerDown = function(ev, poke){
+             
+             if(poke.hit){
+               socket.emit('shift', poke.pickedPoint);
+             }
+             
+           }
+           
+           
            var newplayers = []
            for(var i = 0; i<20; i++){
              var player = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
@@ -166,8 +177,8 @@ setInterval(function() {
               
               console.log("this is random"+dir.rnd);
               newplayers[dir.rnd].setEnabled(true);
-              newplayers[dir.rnd].position.y = dir.y;
-              
+             // newplayers[dir.rnd].position.y = dir.y;
+              newplayers[dir.rnd].position.copyFrom(dir.y)
             }
             });
         
