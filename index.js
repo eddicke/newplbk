@@ -47,7 +47,7 @@ io.on('connection', function(socket) {
        dirs[socket.id] = {
       x: 0,
       y: 0,
-      rnd: Math.floor(Math.random() * 6) + 1,
+      rnd: cnts,
       move: false
     }
     
