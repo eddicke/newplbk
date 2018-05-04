@@ -99,13 +99,12 @@ io.on('connection', function(socket) {
 });
 
 setInterval(function(){
-  count += 1
-  if(count == 1){
+
 
   io.sockets.emit('state', players);
     
-  }
-}, 1000)
+  
+}, 1000/60)
 
 
 
