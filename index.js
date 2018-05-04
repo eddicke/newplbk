@@ -43,7 +43,7 @@ io.on('connection', function(socket) {
 
   socket.on('new player', function() {
 
-    cnts += 1
+    
        dirs[socket.id] = {
       x: 0,
       y: 0,
@@ -110,8 +110,9 @@ setInterval(function(){
 //}, 1000 / 60);
 
 setInterval(function() {
+  cnts += 1
    io.sockets.emit('directions', dirs);
-    io.sockets.emit('online', mrt.rnd);
+    io.sockets.emit('online', cnts);
   
 }, 1000 / 60);
 
