@@ -47,7 +47,7 @@ io.on('connection', function(socket) {
        dirs[socket.id] = {
       x: 0,
       y: 0,
-         rnd: cnts,
+         rnd: 2,
          move: false
     }
     
