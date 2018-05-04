@@ -42,8 +42,7 @@ for (var i = 1; i <= 1 ; i++) {
 io.on('connection', function(socket) {
 
   socket.on('new player', function() {
-    cnts += 1
-    io.sockets.emit('online', cnts);
+    
     
        dirs[socket.id] = {
       x: 0,
@@ -51,6 +50,9 @@ io.on('connection', function(socket) {
          rnd: 0,
          move: false
     }
+    
+    dirs[socket.id].rnd += 1
+    io.sockets.emit('online', dirs[socket.id].rnd);
     
     players[socket.id] = {
       x: 0,
