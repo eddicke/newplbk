@@ -139,10 +139,10 @@ setInterval(function() {
       
 });
            
-           var shft = 0
+           var shft = new BABYLON.Vector3.Zero();
            document.addEventListener('keydown', function(event) {
              if(event.which == 32){
-               shft += .5
+             //  shft += .5
                socket.emit('shift', shft);
              }
            })
