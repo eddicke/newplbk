@@ -47,7 +47,7 @@ io.on('connection', function(socket) {
        dirs[socket.id] = {
       x: 0,
       y: 0,
-         rnd: cnts,
+         rnd: 0,
          move: false
     }
     
@@ -110,6 +110,7 @@ setInterval(function(){
 //}, 1000 / 60);
 
 setInterval(function() {
+  dirs.rnd += 1
    io.sockets.emit('directions', dirs);
     io.sockets.emit('online', mrt.rnd);
   
