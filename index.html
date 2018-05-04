@@ -156,7 +156,7 @@ setInterval(function() {
              
            }
            
-           var mat = new BABYLON.StandardMaterial("texture2", scene);
+          
            var newplayers = []
            for(var i = 0; i<20; i++){
              var player = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
@@ -177,6 +177,8 @@ setInterval(function() {
               
               console.log("this is random"+dir.rnd);
               newplayers[dir.rnd].setEnabled(true);
+              
+               var mat = new BABYLON.StandardMaterial("texture2", scene);
               mat.diffuseColor = new BABYLON.Color3(dir.color.r, dir.color.b, dir.color.g);
               newplayers[dir.rnd].material = mat;
              // newplayers[dir.rnd].position.y = dir.y;
