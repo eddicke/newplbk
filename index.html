@@ -165,7 +165,8 @@ setInterval(function() {
             var dir = dirs[id];
               
               console.log("this is random"+dir.rnd);
-
+              newplayers[dir.rnd].setEnabled(true);
+              newplayers[dir.rnd].position.y = dir.y;
               
             }
             });
