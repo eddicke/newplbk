@@ -171,18 +171,23 @@ setInterval(function() {
               //direction
               socket.on('directions', function(dirs) {
               cnt += 1
-             
+           
             for (var id in dirs) {
             var dir = dirs[id];
               
+                if(cnt == 1){
+               var playerer = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
+                  playerer.position.y = dir.rnd;
+             }
+              
               console.log("this is random"+dir.rnd);
-              newplayers[dir.rnd].setEnabled(true);
+              //newplayers[dir.rnd].setEnabled(true);
               
                var mat = new BABYLON.StandardMaterial("texture2", scene);
               mat.diffuseColor = new BABYLON.Color3(dir.color.r, dir.color.b, dir.color.g);
-              newplayers[dir.rnd].material = mat;
+             // newplayers[dir.rnd].material = mat;
              // newplayers[dir.rnd].position.y = dir.y;
-              newplayers[dir.rnd].position.copyFrom(dir.y)
+             // newplayers[dir.rnd].position.copyFrom(dir.y)
               
             }
             });
