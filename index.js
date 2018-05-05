@@ -41,6 +41,15 @@ for (var i = 1; i <= 1 ; i++) {
 /////////////////
 io.on('connection', function(socket) {
 
+  socket.on("open", function(data){
+    io.emit("open", data)
+    
+  })
+  
+    socket.on("store", function(data){
+    io.emit("store", data)
+  })
+  
   socket.on('new player', function() {
     cnts += 1
     
