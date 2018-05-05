@@ -132,6 +132,22 @@ setInterval(function() {
   socket.emit('movement', movement);
 }, 1000 / 60);
 
+           var users = 0
+           socket.on('connection', function() {
+             socket.emit("open", users)
+             socket.on("open", function(data){
+               users += 1
+               socket.emit("store", users) 
+               if(users == 2){
+                socket.emit("store", users) 
+               }
+             })
+           })
+           
+           
+             socket.on("store", function(data){
+               alert(data)
+             })
            var value = 0;
            socket.on('online', function(data) {
              
