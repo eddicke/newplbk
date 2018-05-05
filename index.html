@@ -175,7 +175,7 @@ setInterval(function() {
             for (var id in dirs) {
             var dir = dirs[id];
               
-                if(cnt == 1){
+                if(cnt >= 1){
                var playerer = new BABYLON.Mesh.CreateBox("sphere1", 2, scene);
                   playerer.position.y = dir.rnd;
              }
